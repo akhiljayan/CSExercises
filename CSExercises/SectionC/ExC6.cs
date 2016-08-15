@@ -42,44 +42,24 @@ namespace CSExercises
 
         public static double CalculateTotalPrice(int tvQty, int dvdQty, int mp3Qty)
         {
-            double discountDvd;
-            double discountTv;
+            double discount = 0;
 
             double costTv = tvQty * 900;
             double costDvd = dvdQty * 500;
             double costMp3 = mp3Qty * 700;
 
-            if (costTv >= 5000 && costTv < 10000)
-            {
-                discountTv = ((double)10 / 100) * costTv;
-            }
-            else if (costTv >= 10000)
-            {
-                discountTv = ((double)15 / 100) * costTv;
-            }
-            else
-            {
-                discountTv = costTv * 0;
-            }
 
-            if (costDvd > 5000 && costDvd < 10000)
-            {
-                discountDvd = ((double)10 / 100) * costDvd;
-            }
-            else if (costDvd >= 10000)
-            {
-                discountDvd = ((double)15 / 100) * costDvd;
-            }
-            else
-            {
-                discountDvd = costDvd * 0;
-            }
+            double discountableTotal = costTv + costDvd;
 
-            double totalDiscount = discountTv + discountDvd;
-            double totalCost = costTv + costDvd + costMp3;
+            if(discountableTotal >= 5000 && discountableTotal <= 10000)
+            {
+                discount = ((discountableTotal) * 10 / 100);
+            }else if(discountableTotal > 10000)
+            {
+                discount = ((discountableTotal) * 15 / 100);
+            }    
 
-            double finalPrise = totalCost - totalDiscount;
-
+            double finalPrise = (discountableTotal - discount) + costMp3;
             return finalPrise;
         }
     }

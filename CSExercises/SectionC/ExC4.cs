@@ -50,4 +50,4 @@ namespace CSExercises
             return fare;
         }
     }
-} n
+} 
