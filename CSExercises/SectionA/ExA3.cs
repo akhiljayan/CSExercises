@@ -14,19 +14,19 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            Console.Write("Please Enter a number: ");
             string inputString = Console.ReadLine();
             int inputInt = Convert.ToInt32(inputString);
 
             int result = square(inputInt);
 
-            Console.WriteLine(result);
+            Console.WriteLine("\nThe square of {0} is {1}", inputInt, result);
         }
 
         public static int square(int x)
         {
-            //PUT YOUR CODE HERE
-            return 0;
-
+            int y = x * x;
+            return y;
         }
     }
 }

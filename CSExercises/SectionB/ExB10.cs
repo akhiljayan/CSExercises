@@ -19,14 +19,42 @@ namespace CSExercises
 
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Enter the 1st side length (a): ");
+            string aStr = Console.ReadLine();
+            Console.Write("\nEnter the 2st side length (b): ");
+            string bStr = Console.ReadLine();
+            Console.Write("\nEnter the 3st side length (c): ");
+            string cStr = Console.ReadLine();
+
+            double aDble = Convert.ToDouble(aStr);
+            double bDble = Convert.ToDouble(bStr);
+            double cDble = Convert.ToDouble(cStr);
+
+            double area = CalculateArea(aDble, bDble, cDble);
+            if (area == -1)
+            {
+                Console.WriteLine("\nArea cannot be defined!!!");
+            }
+            else
+            {
+                Console.WriteLine("\nArea = {0:0.##}", area);
+            }
 
         }
 
         public static double CalculateArea(double a, double b, double c)
         {
-            //YOUR CODE HERE
-            return 0;
+            double s = ((a + b + c) / (double)2);
+            double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            if (!Double.IsNaN(area))
+            {
+                return area;
+            }
+            else
+            {
+                return -1;
+            }
+
         }
     }
 }

@@ -20,20 +20,34 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-
-            //Your code here
-
-
+            Console.Write("Please enter distance in Km: ");
+            double distance = Convert.ToDouble(Console.ReadLine());
+            double roundDist = Math.Ceiling(distance * 10) / 10;
+            double finalDist = (roundDist * 1000);
+            double fare = CalculateFare(finalDist);
+            Console.WriteLine("\nTotal Fare for {0}Km is {1}\n", distance, fare);
 
         }
 
         public static double CalculateFare(double distance)
         {
-            //YOUR CODE HERE
-            return 0;
+            double fare = 0;
+            if (distance > 500 && distance <= 8500)
+            {
+                double balDistMultUnit = (distance - 500) / 100;
+                fare = ((double)2.40) + (balDistMultUnit * 0.04);
+            }
+            else if (distance > 8500)
+            {
+                double balDistMultUnit = (distance - 9000) / 100;
+                fare = ((double)2.40) + (85 * 0.04) + (balDistMultUnit * 0.05);
+            }
+            else if (distance <= 500)
+            {
+                fare = 2.40;
+            }
 
-
-
+            return fare;
         }
     }
-}
+} n

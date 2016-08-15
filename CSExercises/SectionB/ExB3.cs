@@ -18,14 +18,21 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Specify the salary: ");
+            string salStr = Console.ReadLine();
 
+            double[] result = CalculateIncome(salStr);
+            Console.WriteLine("\nBasic Salary: ${0:#,###.00}\nHousing Allowance: ${1:#,##0.00}\nTransport Allowance: ${2:#,##0.00}\n--------------------------------\nTotal: ${3:#,###.00}", result[0], result[1], result[2], result[3]);
         }
 
-        public static string CalculateIncome(string salaryStr)
+        public static double[] CalculateIncome(string salaryStr)
         {
-            //YOUR CODE HERE
-            return null;
+            double salDouble = Convert.ToDouble(salaryStr);
+            double housingAlowance = ((double)10 / 100) * salDouble;
+            double transportAlowance = ((double)3 / 100) * salDouble;
+            double total = (salDouble + housingAlowance + transportAlowance);
+            double[] result = new double[] { salDouble, housingAlowance, transportAlowance, total };
+            return result;
         }
     }
 }

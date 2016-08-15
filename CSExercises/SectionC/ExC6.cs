@@ -29,19 +29,58 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE - get user input, call the function and return the discounted price
+            Console.Write("Enter number of TV required: ");
+            int tvQty = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter number of DVD required: ");
+            int dvdQty = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter number of MP3 required: ");
+            int mp3Qty = Convert.ToInt32(Console.ReadLine());
+            double discountedPrice = CalculateTotalPrice(tvQty, dvdQty, mp3Qty);
 
-
-
+            Console.WriteLine("\nDiscounted Price is: {0}", discountedPrice);
         }
 
         public static double CalculateTotalPrice(int tvQty, int dvdQty, int mp3Qty)
         {
-            //YOUR CODE HERE
-            return 0;
+            double discountDvd;
+            double discountTv;
 
+            double costTv = tvQty * 900;
+            double costDvd = dvdQty * 500;
+            double costMp3 = mp3Qty * 700;
 
+            if (costTv >= 5000 && costTv < 10000)
+            {
+                discountTv = ((double)10 / 100) * costTv;
+            }
+            else if (costTv >= 10000)
+            {
+                discountTv = ((double)15 / 100) * costTv;
+            }
+            else
+            {
+                discountTv = costTv * 0;
+            }
 
+            if (costDvd > 5000 && costDvd < 10000)
+            {
+                discountDvd = ((double)10 / 100) * costDvd;
+            }
+            else if (costDvd >= 10000)
+            {
+                discountDvd = ((double)15 / 100) * costDvd;
+            }
+            else
+            {
+                discountDvd = costDvd * 0;
+            }
+
+            double totalDiscount = discountTv + discountDvd;
+            double totalCost = costTv + costDvd + costMp3;
+
+            double finalPrise = totalCost - totalDiscount;
+
+            return finalPrise;
         }
     }
 }

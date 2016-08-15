@@ -15,14 +15,18 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Enter the distance traveled: ");
+            string distanceStr = Console.ReadLine();
+            double distDble = Convert.ToDouble(distanceStr);
+            double fare = CalculateFare(distDble);
+            Console.WriteLine("\nTotal fare = ${0:0.00}", fare);
         }
 
         public static double CalculateFare(double distance)
         {
-            //YOUR CODE HERE
-            return 0;
-
+            double totalFare = ((double)2.40 + (distance * (double)0.40));
+            double roundedFare = Math.Round(totalFare * 20) / 20;
+            return roundedFare;
         }
     }
 }

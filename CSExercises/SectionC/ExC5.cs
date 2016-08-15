@@ -17,16 +17,32 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
+            Console.Write("Enter a 3 digit number: ");
+            string number = Console.ReadLine();
+            bool result = IsArmstrongNumber(number);
+            Console.WriteLine(result);
         }
 
 
-        public static bool IsArmstrongNumber(int n)
+        public static bool IsArmstrongNumber(string n)
         {
-            //YOUR CODE HERE
-            return false;
+            int number = Convert.ToInt32(n);
+            var charArray = n.ToCharArray();
+            int a = Convert.ToInt32(Convert.ToString(charArray[0]));
+            int b = Convert.ToInt32(Convert.ToString(charArray[1]));
+            int c = Convert.ToInt32(Convert.ToString(charArray[2]));
 
+            double amstrung = (long)Math.Pow(a, 3) + (long)Math.Pow(b, 3) + (long)Math.Pow(c, 3);
+            int finalInt = Convert.ToInt32(amstrung);
+
+            if (finalInt == number)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

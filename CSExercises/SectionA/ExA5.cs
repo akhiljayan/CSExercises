@@ -20,11 +20,10 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            Console.Write("Input: ");
             string inputStr = Console.ReadLine();
             double inputDbl = Convert.ToDouble(inputStr);
-
-            //YOUR CODE HERE
-
+            Console.WriteLine("\nOutput: {0:0.00}", inputDbl);
         }
 
     }
