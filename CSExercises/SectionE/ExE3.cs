@@ -51,5 +51,19 @@ namespace CSExercises
             }
             return true;
         }
+
+        public static bool IsPrimeAnotherWay(int n)
+        {
+            bool isPrime = true;
+            for(int i = 0; i< n-1; i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                    break;// once "if" condition satisfy breaks from loop or just "return false"
+                }
+            }
+            return isPrime;
+        }
     }
 }

@@ -8,8 +8,8 @@
     {
         public static string Substitute(string s, char c1, char c2)
         {
-            //YOUR CODE HERE
-            return null;
+            string newString = s.Replace(c1, c2);
+            return newString;
         }
     }
 }

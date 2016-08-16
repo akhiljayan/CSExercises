@@ -9,12 +9,23 @@
 
         public static int FindWord(string s1, string s2)
         {
-            //YOUR CODE HERE
-            return 0;
+            string s1Lower = s1.ToLower();
+            string s2Lower = s2.ToLower();
 
-
-
-
+            bool status = ExH1.InString(s1Lower, s2Lower);
+            if (status)
+            {
+                string substrS2 = s2Lower.Substring(0, 1);
+                char frstCharS2 = System.Convert.ToChar(substrS2);
+                int position = s1Lower.IndexOf(frstCharS2);
+                return position;
+            }
+            else
+            {
+                return -1;
+            }
+            
+            
         }
     }
 }

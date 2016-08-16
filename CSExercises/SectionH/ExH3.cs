@@ -7,14 +7,9 @@
         //compare your answer with that of the built in function.
         public static string Hex(int i)
         {
-            //YOUR CODE HERE
-            return null;
-
-
-
-
-
-
+            string hexValue = i.ToString("X");
+            //string hexValue = System.Convert.ToString(i);
+            return hexValue;
         }
     }
 }

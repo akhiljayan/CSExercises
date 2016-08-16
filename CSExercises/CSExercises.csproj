@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSExercises.ExC6</StartupObject>
+    <StartupObject>CSExercises.SectionH.TestHseries</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -101,6 +101,7 @@
     <Compile Include="SectionH\ExH2.cs" />
     <Compile Include="SectionH\ExH3.cs" />
     <Compile Include="SectionH\ExH4.cs" />
+    <Compile Include="SectionH\TestHseries.cs" />
     <Compile Include="SectionI\ExI1.cs" />
     <Compile Include="SectionI\ExI2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
